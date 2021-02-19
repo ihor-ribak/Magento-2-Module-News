@@ -1,0 +1,25 @@
+<?php
+/** @var \Ihor\News\Block\Story\Listing $block */
+$stories = $block->getStories();
+?>
+<div class="container stories">
+    <?php if ($stories && count($stories) > 0) : ?>
+        <ul>
+            <?php /** $ca \Ihor\News\Model\Story */ ?>
+            <?php foreach ($stories as $ca) : ?>
+                <li class="stories">
+                    <div class="title">
+                        <?= $ca->getTitle(); ?>
+                    </div>
+                    <div class="link">
+                        <a href="<?= $block->getStoryUrl($ca->getId()); ?>" title="<?= __('View Stories'); ?>">
+                            <?= __('View Stories'); ?>
+                        </a>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else : ?>
+        <p><?= __('No available stories') ?></p>
+    <?php endif ?>
+</div>

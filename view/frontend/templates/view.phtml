@@ -1,0 +1,30 @@
+<?php
+/** @var \Ihor\News\Block\Story\View $block */
+/** @var \Ihor\News\Model\Story $story */
+$story = $block->getStory();
+
+
+?>
+
+<div class="container story">
+    <?php if ($story) : ?>
+        <div class="title">
+            <?= $story->getTitle(); ?>
+        </div>
+        <?php if ($story->getThumbnailPath()) : ?>
+            <div class="thumbnail">
+                <img src="<?= $block->getThumbnailSrc($story->getThumbnailPath()); ?>" title="<?= $story->getTitle(); ?>" />
+            </div>
+        <?php endif; ?>
+        <div class="content">
+            <?= $story->getContent(); ?>
+        </div>
+    <?php else : ?>
+        <p><?= __('This story is not available') ?></p>
+    <?php endif ?>
+</div> 
+<div class="back-link">
+    <a href="<?= $block->getBackLink(); ?>" title="<?= __('All Stories'); ?>">
+        <?= __('All Stories'); ?>
+    </a>
+</div>

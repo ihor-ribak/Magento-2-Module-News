@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ihor_News::content_news" title="News" translate="title"
+                module="Ihor_News" sortOrder="100" parent="Magento_Backend::content"
+                resource="Ihor_News::content_news" />
+        <add id="Ihor_News::content_news_story" title="Stories"
+                translate="title" module="Ihor_News" sortOrder="20"
+                parent="Ihor_News::content_news" action="ihor_news/story"
+                resource="Ihor_News::content_news_story" />
+    </menu>
+</config>

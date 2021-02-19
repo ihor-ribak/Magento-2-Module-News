@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Ihor_News::content_news" title="News"
+                            translate="title" sortOrder="100">
+                        <resource id="Ihor_News::content_news_story"
+                                title="Stories" translate="title" sortOrder="20">
+                            <resource id="Ihor_News::story_save" title="Save Story"
+                                    translate="title" sortOrder="10" />
+                            <resource id="Ihor_News::story_delete"
+                                    title="Delete Story" translate="title" sortOrder="20" />
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Ihor_News::settings" title="Ihor News" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
